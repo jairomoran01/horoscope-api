@@ -9,7 +9,7 @@ app.use(cors({
 }));
 
 // Modificar la ruta para que coincida con la estructura de Vercel
-app.get('/', (req, res) => {  // Cambiado de '/api/horoscope' a '/'
+app.get('/api/horoscope', (req, res) => {
   const { sign } = req.query;
   
   if (!sign || !horoscopes[sign.toLowerCase()]) {
