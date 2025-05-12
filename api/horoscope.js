@@ -3,7 +3,10 @@ const cors = require('cors');
 const horoscopes = require('../data/horoscopes');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://horoscope-api-coral.vercel.app',
+  methods: ['GET']
+}));
 
 app.get('/api/horoscope', (req, res) => {
   const { sign } = req.query;
