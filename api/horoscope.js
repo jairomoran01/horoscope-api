@@ -4,11 +4,12 @@ const horoscopes = require('../data/horoscopes');
 
 const app = express();
 app.use(cors({
-  origin: '*', // Permite todas las conexiones durante desarrollo
+  origin: '*',
   methods: ['GET']
 }));
 
-app.get('/api/horoscope', (req, res) => {
+// Modificar la ruta para que coincida con la estructura de Vercel
+app.get('/', (req, res) => {  // Cambiado de '/api/horoscope' a '/'
   const { sign } = req.query;
   
   if (!sign || !horoscopes[sign.toLowerCase()]) {
