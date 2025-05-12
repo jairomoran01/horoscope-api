@@ -4,7 +4,7 @@ const horoscopes = require('../data/horoscopes');
 
 const app = express();
 app.use(cors({
-  origin: 'https://horoscope-api-coral.vercel.app',
+  origin: '*', // Permite todas las conexiones durante desarrollo
   methods: ['GET']
 }));
 
